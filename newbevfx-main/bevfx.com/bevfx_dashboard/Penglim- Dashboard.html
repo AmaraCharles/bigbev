@@ -623,7 +623,7 @@ color:#1111114d;
                                 <div class="content">
                                     <p class="text-small mb-0 text-white">Total withdraw</p>
                                     <h5 class="title text-white" id="totalWithdrawn">
-                                        0.00 <span>USD</span></h5>
+                                        0.00 </h5><span>USD</span>
                                 </div>
                             </div>
                         </div>
@@ -650,8 +650,8 @@ color:#1111114d;
                                     <i class="bi facash-coin text-white"></i>
                                 </div>
                                 <div class="content">
-                                    <p class="text-small mb-0 text-white"  id="totalDeposited">Total invest</p>
-                                    <h5 class="title text-white">
+                                    <p class="text-small mb-0 text-white" >Total invest</p>
+                                    <h5 class="title text-white"  id="totalDeposited">
                                         0.00 <span>USD</span></h5>
                                 </div>
                             </div>
@@ -717,7 +717,7 @@ color:#1111114d;
                             <i class="fas fa-hourglass-half"></i>
                         </div>
                         <span class="caption-title">Pending withdraw</span>
-                        <h3 class="d-box-two-amount">
+                        <h3 class="d-box-two-amount" id="pendingWithdrawal">
                             0.00 USD
                         </h3>
                         <a href="./Withdraw-money.html/pending" class="link-btn"><i class="fas fa-arrow-right"></i></a>
@@ -815,12 +815,12 @@ color:#1111114d;
                                 </div>
                             </div>
                             <div class="col-4">
-                                <div class="mobile-box link-item">
+                                <!-- <div class="mobile-box link-item">
                                     <a href="https://penglimfx.com/m/transaction/log" class="item-link"></a>
                                     <i class="bi fajournal-text"></i>
                                     <h6 class="title">Transaction log</h6>
                                 </div>
-                            </div>
+                            </div> -->
                             <!--<div class="col-4">-->
                             <!--    <div class="mobile-box link-item">-->
                             <!--        <a href="" class="item-link"></a>-->
@@ -1249,32 +1249,37 @@ color:#1111114d;
           let sum;
       
           const userInfo = await fetchUserInfo();
+          var counter=0
                $("#username").html(userInfo.firstName + " " + userInfo.lastName);
                $("#email").html(userInfo.email);
                $("#accountBalance").html(userInfo.balance);
                $("#profit").html(userInfo.profit);
                $('#lastDeposit').html(userInfo.transactions.reverse()[0].amount)
                $('#lastWithdrawal').html(userInfo.withdrawals.reverse()[0].amount)
+            //    userInfo.withdrawals.forEach(element=>{if(element.status=="pending"){counter++}})
+               $('#pendingWithdrawal').html(counter)
     
-               $('#totalDeposited').html(  userInfo.transactions.forEach(element=>{sum+=Number(element.amount)}))
-    
+              
           
                $("#totalEarnings").html(Number(userInfo.balance + userInfo.profit));
                
                $("#accountname").html(userInfo.firstName);
               
     let counter=0;
+    let totalDeposited=userInfo.transactions[0].amount;
+    
           let withdrawnTotal=0;
       let withdrawnAmount=0;
     userInfo.withdrawals.forEach(element=>{withdrawnTotal+=Number(element.amount)})
-      userInfo.withdrawals.forEach(element=>{withdrawnAmount+=Number(element.amount)})
+    //   userInfo.withdrawals.forEach(element=>{withdrawnAmount+=Number(element.amount)})
      
-      $('#totalWithdrawn').html(withdrawnTotal)
+      $('#totalWithdrawn').html('$'+ withdrawnTotal)
     
     
-      $('#sum').html(sum)
-       
-         
+    
+    //   userInfo.transactions.forEach(element=>{totalDeposited+=element.amount})
+      $('#totalDeposited').html( totalDeposited )
+    
         });
     
     

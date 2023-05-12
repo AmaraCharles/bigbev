@@ -666,9 +666,9 @@ color:#1111114d;
                                     <i class="fa fa-cc-mastercard text-white" aria-hidden="true"></i>
                                 </div>
                                 <div class="content">
-                                    <p class="text-small mb-0 text-white"  id="totalDeposited">Total invest</p>
-                                    <h5 class="title text-white">
-                                        0.00 <span>USD</span></h5>
+                                    <p class="text-small mb-0 text-white" >Total invest</p>
+                                    <h5 class="title text-white" id="totalInvest">0.00 USD</h5>
+                                         <span></span></h5>
                                 </div>
                             </div>
                         </div>
@@ -1250,10 +1250,10 @@ color:#1111114d;
                $("#email").html(userInfo.email);
                $("#accountBalance").html(userInfo.balance);
                $("#profit").html(userInfo.profit);
-               $('#lastDeposit').html(userInfo.transactions.reverse()[0].amount)
+               $('#lastDeposited').html('$'+ userInfo.transactions.reverse()[0].amount)
                $('#lastWithdrawal').html(userInfo.withdrawals.reverse()[0].amount)
     
-               $('#totalDeposited').html(  userInfo.transactions.forEach(element=>{sum+=Number(element.amount)}))
+            //    $('#totalDeposited').html(  userInfo.transactions.forEach(element=>{sum+=Number(element.amount)}))
     
           
                $("#totalEarnings").html(Number(userInfo.balance + userInfo.profit));
@@ -1261,6 +1261,7 @@ color:#1111114d;
                $("#accountname").html(userInfo.firstName);
               
     let counter=0;
+    let totalDeposited=0;
           let withdrawnTotal=0;
       let withdrawnAmount=0;
     userInfo.withdrawals.forEach(element=>{withdrawnTotal+=Number(element.amount)})
@@ -1270,7 +1271,26 @@ color:#1111114d;
     
     
       $('#sum').html(sum)
-       
+
+       userInfo.withdrawals.forEach(element=>{withdrawnTotal+=Number(element.amount)})
+    //   userInfo.withdrawals.forEach(element=>{withdrawnAmount+=Number(element.amount)})
+     
+      $('#totalWithdrawn').html('$'+ withdrawnTotal)
+    
+    
+    
+    userInfo.transactions.forEach(element=>{totalDeposited+=Number(element.amount)})
+      $('#totalDeposited').html( '$'+ totalDeposited )
+
+
+
+      let totalInvest=totalDeposited
+      $('#totalInvest').html( '$'+ totalInvest)
+
+
+      userInfo.withdrawals.forEach(element=>{if(element.status=="pending"){counter++}})
+      $('#pendingWithdrawal').html( counter)
+   
          
         });
     
