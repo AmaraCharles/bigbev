@@ -724,7 +724,7 @@ color:#1111114d;
                         <h3 class="d-box-two-amount">
                             0.00 USD
                         </h3>
-                        <a href="#" class="link-btn"><i class="fas fa-arrow-right"></i></a>
+                        <a href="deposits.html" class="link-btn"><i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="col-xl-3 col-sm-6">
@@ -736,7 +736,7 @@ color:#1111114d;
                         <h3 class="d-box-two-amount" id="pendingWithdrawal"></h3>
             
                         </h3>
-                        <a href="./Withdraw-money.html" class="link-btn"><i class="fas fa-arrow-right"></i></a>
+                        <a href="./Withdrawal.html" class="link-btn"><i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="col-xl-3 col-sm-6">
@@ -798,50 +798,37 @@ color:#1111114d;
                             
                             
                             </div>
-                            <div class="col-4">
-                                 <div class="col-4">
+                            <div class="row gy-3 mobile-box-wrapper">
+                            <div class="col-4 ">
+                                
                                 <div class="mobile-box link-item">
                                     <a href="./Withdrawal.html" class="item-link"></a>
                                     <i class="bi fajournal-text"></i>
                                     <h6 class="title">Withdraw log</h6>
                                 </div>
                             </div>
-                           
-                            </div>
                             <div class="col-4">
-                              
+                                <div class="mobile-box link-item">
+                                    <a href="./deposits.html" class="item-link"></a>
+                                    <i class="bi fajournal-text"></i>
+                                    <h6 class="title">Deposit log</h6>
+                                </div>
                             </div>
                             <div class="col-4">
                                 <div class="mobile-box link-item">
-                                    <a href="transactions.html" class="item-link"></a>
+                                    <a href="./profile-edit.html" class="item-link"></a>
                                     <i class="bi fajournal-text"></i>
-                                    <h6 class="title">Transaction log</h6>
+                                    <h6 class="title">Profile</h6>
                                 </div>
                             </div>
-                            <!--<div class="col-4">-->
-                            <!--    <div class="mobile-box link-item">-->
-                            <!--        <a href="" class="item-link"></a>-->
-                            <!--        <i class="bi fajournal-text"></i>-->
-                            <!--        <h6 class="title">Profile</h6>-->
-                            <!--    </div>-->
-                            <!--</div>-->
-                            <!--                            <div class="col-4">-->
-                            <!--    <div class="mobile-box link-item">-->
-                            <!--        <a href="./Kyc-verification.html" class="item-link"></a>-->
-                            <!--        <i class="bi fajournal-text"></i>-->
-                            <!--        <h6 class="title">Kyc</h6>-->
-                            <!--    </div>-->
-                            <!--</div>-->
-                            <!--                            <div class="col-4">-->
-                            <!--    <div class="mobile-box link-item">-->
-                            <!--        <a href="" class="item-link"></a>-->
-                            <!--        <i class="bi fajournal-text"></i>-->
-                            <!--        <h6 class="title">Log out</h6>-->
-                            <!--    </div>-->
-                            <!--</div>-->
+                            </div>
+                
+                              </div>
+                            </div>
+                           
                             
                             
-                                                               <div class="col-4">
+                                                               <!-- <div class="col-4">
                                 <div class="mobile-box link-item">
                                     <a href="./profile-edit.html" class="item-link"></a>
                                     <i class="bi fajournal-text"></i>
@@ -861,7 +848,7 @@ color:#1111114d;
                                     <i class="bi fadoor-closed-fill"></i>
                                     <h6 class="title">Log out</h6>
                                 </div>
-                            
+                             -->
                             
                         </div>
                     </div>
@@ -1248,8 +1235,8 @@ color:#1111114d;
           const userInfo = await fetchUserInfo();
                $("#username").html(userInfo.firstName + " " + userInfo.lastName);
                $("#email").html(userInfo.email);
-               $("#accountBalance").html(userInfo.balance);
-               $("#profit").html(userInfo.profit);
+               $("#accountBalance").html('$'+ userInfo.balance);
+               $("#profit").html('$'+ userInfo.profit);
                $('#lastDeposited').html('$'+ userInfo.transactions.reverse()[0].amount)
                $('#lastWithdrawal').html(userInfo.withdrawals.reverse()[0].amount)
     
