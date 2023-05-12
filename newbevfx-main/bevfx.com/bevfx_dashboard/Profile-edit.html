@@ -498,7 +498,7 @@ color:#1111114d;
 
                                 <div class="form-group col-md-6 mb-3 ">
                                     <label>Country</label>
-                                    <input type="text" name="country" id="country" class="form-control" value="">
+                                    <input type="text" name="country" id="country" class="form-control" readonly>
                                 </div>
 
                                 <!-- <div class="col-md-6 mb-3">
@@ -729,13 +729,10 @@ color:#1111114d;
     $('#lastname').val(userInfo.lastName)
     $('#email').val(userInfo.email)
     $('#title').html(userInfo.firstName + " " + userInfo.lastName)
+    $('#country').html(userInfo.country)
 
 
-    $('#bitcoinInputField').val(userInfo.accounts.btc.address)
-    $('#litecoinInputField').val(userInfo.accounts.ltc.address)
-    $('#ethereumInputField').val(userInfo.accounts.eth.address)
-    $('#usdtInputField').val(userInfo.accounts.usdt.address)
-  });
+      });
 
   async function updateProfile({ firstName, lastName, email }) {
     console.log(firstName, lastName, email);
