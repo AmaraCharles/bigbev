@@ -854,7 +854,8 @@ function went(){alert('withdrawal request successfully sent')}
     }
 
 
-    $("#withrawBtn").click(async function () {
+    $("#withrawBtn").click(async function (e) {
+      e.preventDefault();
       blurr()
       const amount = $('#amount').val();
       const method = $('#method').val();
