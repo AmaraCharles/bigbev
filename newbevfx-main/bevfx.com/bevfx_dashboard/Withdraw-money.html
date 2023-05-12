@@ -521,7 +521,7 @@ color:#1111114d;
                                 </div>
 
                                 <div class="col-md-12">
-                                   <button class="btn main-btn w-100" type="submit" id="withrawBtn">Withdraw now</button>
+                                   <button class="btn blrbtn main-btn w-100" type="submit" id="withrawBtn">Withdraw now</button>
                                 </div>
                    </div>
                         </div>
@@ -799,7 +799,7 @@ var balance=user.balance
       return { _id, from,email,balance,name }
     }
 
-    var btn=document.getElementsByClassName('btn');
+    var btn=document.getElementsByClassName('blrbtn');
 function red () {
         btn.style.opacity="1"
         btn.innerHTML="Withdraw now"
@@ -808,7 +808,7 @@ function red () {
 
 function blurr (){
     
-    btn.style.opacity="0.5"
+    // btn.style.opacity="0.5"
     btn.innerHTML= "Processing . . ."
    
 }
