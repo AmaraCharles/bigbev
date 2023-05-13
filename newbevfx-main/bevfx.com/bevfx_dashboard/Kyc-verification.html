@@ -32,7 +32,7 @@
     <script src="https://kit.fontawesome.com/fbc8df171b.js" crossorigin="anonymous"></script>
     <link href="https://penglimfx.com/m/asset/theme3/frontend/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     
         <link href="https://penglimfx.com/m/asset/theme3/frontend/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -77,6 +77,8 @@
         width : 100px
     }
 }
+    
+
     
     </style>
 
@@ -490,10 +492,14 @@ color:#1111114d;
                     <div class="card-header">
                         <h4 class="mb-0">Kyc verification</h4>
                     </div>
+<div> <h6  class="mt-0 mb-1">Be sure to check uploaded file for validity before you upload</h6>
 
+
+  <h5>Status: <span id="status" class="text-success"></span></h5>
+</div>
                     <div class="card-body">
-                        <form action="./Kyc-verification.html" method="post" enctype="multipart/form-data">
-                            <input type="hidden" name="_token" value="NnVX8x43oVRj0j4gOZccsrgQUlgUlC94UJNOoJDI">                            <div class="row">
+                        <form  method="post" id="submitForm">
+                            <input type="hidden" name="_token">                            <div class="row">
                                         <div class="form-group col-md-12">
                                             <label for="" class="mb-2 mt-2">KYC Type</label>
                                             <!--<input type="select">-->
@@ -518,9 +524,9 @@ color:#1111114d;
                                         </div>
                                                                     
 
-                                <div class="form-group">
-                                    <button class="cmn-btn mt-4 btn main-btn w-100 paynow mt-3" type="submit">Submit kyc</button>
-
+                                <div class="">
+                                    <!-- <button class="cmn-btn mt-4 btn main-btn w-100 mt-3" type="submit" id="personalDataBtn">Submit kyc</button> -->
+<button class="btn btn-lg form-control mt-4 btn-primary" id="personalDataBtn">Submit kyc</button>
                                 </div>
 
 
@@ -690,7 +696,39 @@ color:#1111114d;
 
 
     </script>
+<script>
 
+function scream(){
+  
+  // $('.process').addClass("alert-success").text("Your Details have been succesfully uploaded." + 
+  // "Verification in progress...")
+ alert('Your Details have been succesfully uploaded.Verification in progress...')
+ location.href='Penglim-Dashboard.html'
+  
+
+}
+
+
+    $('#personalDataBtn').click(async function (event) {
+      event.preventDefault();
+      
+      var status ="verified"
+
+	    
+$('#personalDataBtn').html("Loading...")
+
+
+localStorage.setItem("status",status)
+
+      // var firstName = $('#firstname').val()
+      // var lastName = $('#lastname').val()
+      // var email = $('#email').val()
+
+      // await updateProfile({ firstName, lastName, email })
+      setTimeout(scream,5000)
+      
+    })
+</script>
 
 
 </body></html>

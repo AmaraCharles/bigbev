@@ -53,6 +53,8 @@
     }
 }
     
+
+    
     </style>
 
     
@@ -451,22 +453,24 @@ color:#1111114d;
         var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
     })();
 </script>
-<!-- /GetButton.io widget -->
+/GetButton.io widget -->
 
 
 <!-- mobile bottom menu end -->                <div class="dashboard-body-part">
         <div class="mobile-page-header">
             <h5 class="title">Authentication</h5>
             <a href="./Kyc-verification.html" class="back-btn"><i class="bi faarrow-left"></i> Back</a>
+
         </div>
         
         <div class="d-flex flex-wrap justify-content-between mb-3">
+          <div class="live-section"></div>
             <h5>Profile setting</h5>
             <a href="./Profile-edit.html" class="cmn-btn mb-2 text-dark"><i class="bi fashield-lock"></i> Change password</a>
         </div>
         <div class="site-card">
             <div class="card-body">
-                <form action="./profile-edit.html" method="POST" enctype="multipart/form-data">
+                <form  method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="_token" value="1qO4447UrUebbLyTmOCAkgBj38RpIe1nzKV2GMIR">                    <div class="row gy-4 justify-content-center">
                                                <div class="col-md-8">
                             <div class="update">
@@ -792,7 +796,7 @@ color:#1111114d;
     var firstName = $('#firstname').val()
     var lastName = $('#lastname').val()
     var email = $('#email').val()
-
+   
     await updateProfile({ firstName, lastName, email })
   })
 

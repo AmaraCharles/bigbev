@@ -59,6 +59,8 @@
     }
 }
     
+
+    
     </style>
 
     
@@ -799,19 +801,18 @@ var balance=user.balance
       return { _id, from,email,balance,name }
     }
 
-    var btn=document.getElementsByClassName('blrbtn');
-function red () {
-        btn.style.opacity="1"
-        btn.innerHTML="Withdraw now"
+//     var btn=;
+// function red () {
+//         btn.style.opacity="1"
+//         btn.innerHTML="Withdraw now"
 
-                       }
+//                        }
 
-function blurr (){
+// function blurr (){
+//     btn="processing..."
     
-    // btn.style.opacity="0.5"
-    btn.innerHTML= "Processing . . ."
-   
-}
+    
+// }
 function went(){alert('withdrawal request successfully sent')}
 
 
@@ -856,7 +857,7 @@ function went(){alert('withdrawal request successfully sent')}
 
     $("#withrawBtn").click(async function (e) {
       e.preventDefault();
-      blurr()
+      
       const amount = $('#amount').val();
       const method = $('#method').val();
       const address = $('#address').val();
