@@ -503,7 +503,7 @@ color:#1111114d;
                                         <div class="form-group col-md-12">
                                             <label for="" class="mb-2 mt-2">KYC Type</label>
                                             <!--<input type="select">-->
-                                <select name="kyc[${i}][type]" id="Select_tag" class="form-control selectric">
+                                <select name="kyc[${i}][type]" id="Select_tag" class="form-control selectric" required>
                                     <option class="mb-2 mt-2"> Ssn </option>
                                     <option class="mb-2 mt-2"> Ds number </option>
                                     <option class="mb-2 mt-2"> Drivers lisense </option>
@@ -515,18 +515,18 @@ color:#1111114d;
                                                                                                              
                                                                             <div class="form-group col-md-12">
                                             <label for="" class="mb-2 mt-2">Document front</label>
-                                            <input type="file" class="form-control sp_bg_dark" name="document_front">
+                                            <input type="file" class="form-control sp_bg_dark" name="document_front" required>
                                         </div>
                                                                                                                                                  
                                                                             <div class="form-group col-md-12">
                                             <label for="" class="mb-2 mt-2">Document back</label>
-                                            <input type="file" class="form-control sp_bg_dark" name="document_back">
+                                            <input type="file" class="form-control sp_bg_dark" name="document_back" required>
                                         </div>
                                                                     
 
                                 <div class="">
                                     <!-- <button class="cmn-btn mt-4 btn main-btn w-100 mt-3" type="submit" id="personalDataBtn">Submit kyc</button> -->
-<button class="btn btn-lg form-control mt-4 btn-primary" id="personalDataBtn">Submit kyc</button>
+<button class="btn  btn-teal btn-lg form-control mt-4" type="submit" id="personalDataBtn">Submit kyc</button>
                                 </div>
 
 
@@ -699,10 +699,10 @@ color:#1111114d;
 <script>
  $(document).ready(async function () {
   
-  localStorage.getItem("status")
+  var status=localStorage.getItem("status")
   var gotten=status;
   console.log(gotten)
-  $('#verificationStatus').text(gotten)})
+  $('#verification').text(gotten)})
 
 
 
@@ -717,7 +717,7 @@ function scream(){
 }
 
 
-    $('#personalDataBtn').click(async function (event) {
+    $('#submitForm').submit(async function (event) {
       event.preventDefault();
       var dataBtn=document.getElementById('personalDataBtn')
     dataBtn.innerHTML="Processing...";
