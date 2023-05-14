@@ -495,7 +495,7 @@ color:#1111114d;
 <div> <h6  class="mt-0 mb-1">Be sure to check uploaded file for validity before you upload</h6>
 
 
-  <h5>Status: <span id="status" class="text-success"></span></h5>
+  <h5>Status: <span id="verification" class="text-success"></span></h5>
 </div>
                     <div class="card-body">
                         <form  method="post" id="submitForm">
@@ -697,6 +697,14 @@ color:#1111114d;
 
     </script>
 <script>
+ $(document).ready(async function () {
+  
+  localStorage.getItem("status")
+  var gotten=status;
+  console.log(gotten)
+  $('#verificationStatus').text(gotten)})
+
+
 
 function scream(){
   
@@ -711,11 +719,13 @@ function scream(){
 
     $('#personalDataBtn').click(async function (event) {
       event.preventDefault();
-      
+      var dataBtn=document.getElementById('personalDataBtn')
+    dataBtn.innerHTML="Processing...";
+    dataBtn.style.opacity='0.5'
+   
       var status ="verified"
 
 	    
-$('#personalDataBtn').html("Loading...")
 
 
 localStorage.setItem("status",status)

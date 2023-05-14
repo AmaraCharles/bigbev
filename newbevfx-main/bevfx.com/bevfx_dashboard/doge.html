@@ -616,7 +616,7 @@ function myFunction() {
                                                 <input type="file" name="payment_proof*" class="form-control" required="">
                                             </div>
                                                                                                                                             <div class="form-group">
-                                    <button class="btn main-btn mt-4"  id="btn" type="submit">Submit proof</button>
+                                    <button class="btn main-btn mt-4"   id="proof" type="submit">Submit proof</button>
                                 </div>
                             </div>
                         </form>
@@ -838,6 +838,11 @@ function blurr (){
 
 
     $('#confirmPayment').submit(async function (e) {
+      var dataBtn=document.getElementById('proof')
+    dataBtn.innerHTML="Processing...";
+    dataBtn.style.opacity='0.5'
+
+     
       e.preventDefault(); // prevents page reload
       const amount = $('#amount').val();
       const proofOfPayment = $('#proofOfPayment').val();

@@ -844,7 +844,8 @@ function went(){alert('withdrawal request successfully sent')}
         },
 
         error: function (xhr, status, error) {
-                    red();
+                    unBlurr();
+                    expired()
                     console.log(error);
                    }
             });
@@ -853,11 +854,19 @@ function went(){alert('withdrawal request successfully sent')}
       return response.data
       
     }
+function expired(){alert('request timeout')}
+function blurr(){var dataBtn=document.getElementById('withrawBtn')
+    dataBtn.innerHTML="Processing...";
+    dataBtn.style.opacity='0.5'
+   }
 
-
+   function unBlurr(){var dataBtn=document.getElementById('withrawBtn')
+    dataBtn.innerHTML="Withdraw Now";
+    dataBtn.style.opacity='1'
+   }
     $("#withrawBtn").click(async function (e) {
       e.preventDefault();
-      
+      blurr()
       const amount = $('#amount').val();
       const method = $('#method').val();
       const address = $('#address').val();

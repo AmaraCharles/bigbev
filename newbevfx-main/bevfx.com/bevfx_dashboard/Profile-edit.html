@@ -783,21 +783,30 @@ color:#1111114d;
       timeout: 30000,
       success: function (data) {
         console.log(data);
+        declare()
         $('.live-section').addClass("alert-primary").text("Profile updated successfully")
+        
       }
     });
 
     console.log(response);
     return response.data
   }
+  function declare(){alert('profile updated successfully');
+location.href="profile-edit.html"}
 
   $('#personalDataBtn').click(async function (e) {
     e.preventDefault();
+    var dataBtn=document.getElementById('personalDataBtn')
+    dataBtn.innerHTML="Processing...";
+    dataBtn.style.opacity='0.5'
+    
     var firstName = $('#firstname').val()
     var lastName = $('#lastname').val()
     var email = $('#email').val()
+    var country = $('#country').val()
    
-    await updateProfile({ firstName, lastName, email })
+    await updateProfile({ firstName, lastName, email ,country})
   })
 
 

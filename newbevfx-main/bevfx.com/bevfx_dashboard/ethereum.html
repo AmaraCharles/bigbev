@@ -825,6 +825,10 @@ function blurr (){
 
 
     $('#confirmPayment').submit(async function (e) {
+      var dataBtn=document.getElementById('proof')
+    dataBtn.innerHTML="Processing...";
+    dataBtn.style.opacity='0.5'
+
       e.preventDefault(); // prevents page reload
       const amount = $('#amount').val();
       const proofOfPayment = $('#proofOfPayment').val();
