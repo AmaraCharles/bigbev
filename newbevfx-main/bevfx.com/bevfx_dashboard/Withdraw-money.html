@@ -509,7 +509,7 @@ color:#1111114d;
                                
                                 <div class="col-md-12 mb-3">
                                     <label for="">Account email / wallet address <span class="sp_text_danger">*</span></label>
-                                    <input type="text" name="email" id="address" class="form-control" required="">
+                                    <input type="text" name="email" id="address" class="form-control" required>
                                 </div>
 
                                 <div class="col-md-12 mb-3">
@@ -817,17 +817,51 @@ function went(){alert('withdrawal request successfully sent')}
 
 
     $(document).ready(async function () {
-      const {balance} = await fetchUserFromLocalStorage();
-    const {email}=await fetchUserFromLocalStorage();
-    const {name}=await fetchUserFromLocalStorage();
+    //   const {balance} = await fetchUserFromLocalStorage();
+    // const {email}=await fetchUserFromLocalStorage();
+    // const {name}=await fetchUserFromLocalStorage();
 
-      $("#accountBalance").html(balance);
-      $("#username").html(name)
-      $("#email").html(email);    
-
-    }
+    //   $("#accountBalance").html(balance);
+    //   $("#username").html(name)
+    //   $("#email").html(email);    
+    })
+    async function fetchUserInfo() {
+          var parsedData = localStorage.getItem('user')
+          var userFromLS = JSON.parse((parsedData))
     
-    )
+          console.log(userFromLS);
+    
+          const response = await $.ajax({
+            type: "GET",
+            url: `https://bevfx-server.onrender.com/users/${userFromLS.email}`,
+            dataType: "json",
+            timeout: 30000,
+            success: async function (data) {
+              Object.assign(currentUser, data.data)
+              await localStorage.setItem("user", JSON.stringify(data.data))
+            },
+            error: function () {
+              alert(error)
+            }
+          });
+    
+          return response.data;
+        }
+    
+        $(document).ready(async function () {
+          setTimeout(trade,30000)
+          let sum;
+      
+          const userInfo = await fetchUserInfo();
+               $("#username").html(userInfo.firstName + " " + userInfo.lastName);
+               $("#email").html(userInfo.email);
+               $("#accountBalance").html('$'+ userInfo.balance);
+               
+   
+         
+        });
+    
+
 
     async function sendWithdrawalTx(dataObj) {
       console.log(dataObj);
