@@ -8,8 +8,25 @@
     <title>
                   Bevfx investments-Dashboard
     </title>
-
     <script src="https://kit.fontawesome.com/fbc8df171b.js" crossorigin="anonymous"></script>
+    <link href="https://penglimfx.com/m/asset/theme3/frontend/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <link href="https://penglimfx.com/m/asset/theme3/frontend/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://penglimfx.com/m/asset/theme3/frontend/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://penglimfx.com/m/asset/theme3/frontend/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://penglimfx.com/m/asset/theme3/frontend/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="https://penglimfx.com/m/asset/theme3/frontend/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="https://penglimfx.com/m/asset/theme3/frontend/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://penglimfx.com/m/asset/theme3/frontend/css/selectric.css">
+    <link rel="stylesheet" href="https://penglimfx.com/m/asset/theme3/frontend/css/animate.min.css">
+    <link rel="stylesheet" href="https://penglimfx.com/m/asset/theme3/frontend/css/font-awsome.min.css">
+    <link rel="stylesheet" href="https://penglimfx.com/m/asset/theme3/frontend/css/iziToast.min.css">
+    <link href="https://penglimfx.com/m/asset/theme3/frontend/css/style.css" rel="stylesheet">
+
+    <!-- <script src="https://kit.fontawesome.com/fbc8df171b.js" crossorigin="anonymous"></script>
     <link href="https://penglimfx.com/m/asset/theme3/frontend/img/apple-touch-icon.png" rel="apple-touch-icon">
 
 
@@ -24,7 +41,7 @@
     <link rel="stylesheet" href="./Penglim- Dashboard_files/font-awsome.min.css">
     <link rel="stylesheet" href="./Penglim- Dashboard_files/iziToast.min.css">
     <link href="./Penglim- Dashboard_files/style.css" rel="stylesheet">
-    <style>
+    <style> -->
     .visibility{
     visibility: visible;
 }
@@ -276,7 +293,8 @@
                 <div class="dropdown ms-3">
                     <button class="dropdown-toggle user-toggle-menu" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <img src="./Penglim- Dashboard_files/user.png" alt="pp">
-                                                <span class="ms-2"></span>
+
+                                                <span class="ms-2" id="username"></span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
                         <li><a class="dropdown-item" href="./Profile-edit.html">Manage profile</a></li>
@@ -472,8 +490,7 @@ color:#1111114d;
     <li>
       <!--<a href="./Payment-methods.html" class="">-->
             <a href="./dashboard.html" class="active">
-         <i class="fas fa-boxes text-black"></i>
-
+                <i class="fas fa-boxes text-black" aria-hidden="true"></i>
         <span>Home</span>
       </a>
     </li>
@@ -490,7 +507,7 @@ color:#1111114d;
     <li>
       <!--<a href="./dashboard.html" class="active">-->
                 <a href="./Payment-methods.html" class="">
-         <i class="fa-solid fa-wallet text-black"></i>
+                    <i class="fa-solid fa-wallet text-black"></i>
         <span>Add fund</span>
       </a>
     </li>
@@ -498,7 +515,7 @@ color:#1111114d;
     -webkit-box-shadow: 10px 10px 42px 0px rgb(0 0 0 / 75%);
     -moz-box-shadow: 10px 10px 42px 0px rgba(0,0,0,0.75);">
       <a href="./investment-plan.html" class="">
-         <i class="fa-solid fa-piggy-bank text-white"></i>
+                                           <i class="fa-solid fa-piggy-bank text-white"></i>
         <span style="color:#fff;">Invest</span>
       </a>
     </li>
@@ -510,7 +527,7 @@ color:#1111114d;
       </a>
     </li>
     <li>
-      <a href="./deposits.html" class="">
+      <a href="./Deposits.html" class="">
         <i class="fa-solid fa-hourglass text-black"></i>
         <span>Deposits</span>
       </a>
@@ -590,7 +607,7 @@ color:#1111114d;
                         <div class="col-lg-12 col-6">
                             <div class="d-box-three gr-bg-1">
                                 <div class="icon">
-                                    <i class="bi fawallet2 text-white"></i>
+                                    <i class="fa-solid fa-wallet text-white"></i>
                                 </div>
                                 <div class="content">
                                     <p class="text-small mb-0 text-white">Account balance</p>
@@ -603,7 +620,7 @@ color:#1111114d;
                         <div class="col-lg-12 col-6">
                             <div class="d-box-three gr-bg-3">
                                 <div class="icon">
-                                    <i class="bi facoin text-white"></i>
+                                    <i class="fa-solid fa-coins text-white"></i>
                                 </div>
                                 <div class="content">
                                     <p class="text-small mb-0 text-white">Total profit</p>
@@ -620,19 +637,19 @@ color:#1111114d;
                         <div class="col-lg-12 col-6">
                             <div class="d-box-three gr-bg-1">
                                 <div class="icon">
-                                    <i class="bi fapiggy-bank text-white"></i>
+                                    <i class="fa-solid fa-piggy-bank text-white"></i>
                                 </div>
                                 <div class="content">
                                     <p class="text-small mb-0 text-white">Total withdraw</p>
                                     <h5 class="title text-white" id="totalWithdrawn">
-                                        0.00 </h5><span>USD</span>
+                                        0.00 <span>USD</span></h5>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-12 col-6">
                             <div class="d-box-three gr-bg-3">
                                 <div class="icon">
-                                    <i class="bi fahourglass-split text-white"></i>
+                                    <i class="fa-solid fa-hourglass text-white"></i>
                                 </div>
                                 <div class="content">
                                     <p class="text-small mb-0 text-white">Total deposit</p>
@@ -649,19 +666,19 @@ color:#1111114d;
                         <div class="col-xl-12 col-6">
                             <div class="d-box-three gr-bg-2">
                                 <div class="icon">
-                                    <i class="bi facash-coin text-white"></i>
+                                    <i class="fa fa-cc-mastercard text-white" aria-hidden="true"></i>
                                 </div>
                                 <div class="content">
                                     <p class="text-small mb-0 text-white" >Total invest</p>
-                                    <h5 class="title text-white"  id="totalDeposited">
-                                        0.00 <span>USD</span></h5>
+                                    <h5 class="title text-white" id="totalInvest">0.00 USD</h5>
+                                         <span></span></h5>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xl-12 col-6">
                             <div class="d-box-three gr-bg-4">
                                 <div class="icon">
-                                    <i class="bi fawallet2 text-white"></i>
+                                    <i class="fas fa-boxes text-white"></i>
                                 </div>
                                 <div class="content">
                                     <p class="text-small mb-0 text-white">Recent invest</p>
@@ -698,7 +715,7 @@ color:#1111114d;
                         <span class="caption-title">Current plan</span>
                         <h3 class="d-box-two-amount">
                             N/A</h3>
-                        <a href="" class="link-btn"><i class="fas fa-arrow-right"></i></a>
+                        <a href="#" class="link-btn"><i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="col-xl-3 col-sm-6">
@@ -710,7 +727,7 @@ color:#1111114d;
                         <h3 class="d-box-two-amount">
                             0.00 USD
                         </h3>
-                        <a href="https://penglimfx.com/m/invest/pending" class="link-btn"><i class="fas fa-arrow-right"></i></a>
+                        <a href="deposits.html" class="link-btn"><i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="col-xl-3 col-sm-6">
@@ -718,11 +735,11 @@ color:#1111114d;
                         <div class="d-box-two-icon">
                             <i class="fas fa-hourglass-half"></i>
                         </div>
-                        <span class="caption-title">Pending withdraw</span>
-                        <h3 class="d-box-two-amount" id="pendingWithdrawal">
-                            0.00 USD
+                        <span class="caption-title">Pending withdrawals</span>
+                        <h3 class="d-box-two-amount" id="pendingWithdrawal"></h3>
+            
                         </h3>
-                        <a href="./Withdraw-money.html/pending" class="link-btn"><i class="fas fa-arrow-right"></i></a>
+                        <a href="./Withdrawal.html" class="link-btn"><i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="col-xl-3 col-sm-6">
@@ -730,7 +747,7 @@ color:#1111114d;
                         <div class="d-box-two-icon">
                             <i class="fas fa-hand-holding-usd"></i>
                         </div>
-                        <span class="caption-title">Refferal earn</span>
+                        <span class="caption-title"></span>
                         <h3 class="d-box-two-amount">
                             0.00 USD
                         </h3>
@@ -775,78 +792,46 @@ color:#1111114d;
                                     <i class="bi fajournal-text"></i>
                                     <h6 class="title">Withdraw</h6>
                                 </div>
+
+                                
                             </div>
                             
                             <!--endfund-->
                             
                             
                             
-                            <div class="col-4">
-                                <div class="mobile-box link-item">
-                                    <a href="https://penglimfx.com/m/invest/log" class="item-link"></a>
-                                    <i class="bi fajournal-text"></i>
-                                    <h6 class="title">Investment log</h6>
-                                </div>
                             </div>
-                            <div class="col-4">
+                            <div class="row gy-3 mobile-box-wrapper">
+                            <div class="col-4 ">
+                                
                                 <div class="mobile-box link-item">
-                                    <a href="./Payment-methods.html/log" class="item-link"></a>
-                                    <i class="bi fajournal-text"></i>
-                                    <h6 class="title">Deposit log</h6>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="mobile-box link-item">
-                                    <a href="./Withdraw-money.html/all" class="item-link"></a>
+                                    <a href="./Withdrawal.html" class="item-link"></a>
                                     <i class="bi fajournal-text"></i>
                                     <h6 class="title">Withdraw log</h6>
                                 </div>
                             </div>
                             <div class="col-4">
                                 <div class="mobile-box link-item">
-                                    <a href="https://penglimfx.com/m/interest/log" class="item-link"></a>
+                                    <a href="./deposits.html" class="item-link"></a>
                                     <i class="bi fajournal-text"></i>
-                                    <h6 class="title">Earning log</h6>
+                                    <h6 class="title">Deposit log</h6>
                                 </div>
                             </div>
                             <div class="col-4">
                                 <div class="mobile-box link-item">
-                                    <a href="https://penglimfx.com/m/transaction/log" class="item-link"></a>
+                                    <a href="./profile-edit.html" class="item-link"></a>
                                     <i class="bi fajournal-text"></i>
-                                    <h6 class="title">Money transfer log</h6>
+                                    <h6 class="title">Profile</h6>
                                 </div>
                             </div>
-                            <div class="col-4">
-                                <!-- <div class="mobile-box link-item">
-                                    <a href="https://penglimfx.com/m/transaction/log" class="item-link"></a>
-                                    <i class="bi fajournal-text"></i>
-                                    <h6 class="title">Transaction log</h6>
-                                </div>
-                            </div> -->
-                            <!--<div class="col-4">-->
-                            <!--    <div class="mobile-box link-item">-->
-                            <!--        <a href="" class="item-link"></a>-->
-                            <!--        <i class="bi fajournal-text"></i>-->
-                            <!--        <h6 class="title">Profile</h6>-->
-                            <!--    </div>-->
-                            <!--</div>-->
-                            <!--                            <div class="col-4">-->
-                            <!--    <div class="mobile-box link-item">-->
-                            <!--        <a href="./Kyc-verification.html" class="item-link"></a>-->
-                            <!--        <i class="bi fajournal-text"></i>-->
-                            <!--        <h6 class="title">Kyc</h6>-->
-                            <!--    </div>-->
-                            <!--</div>-->
-                            <!--                            <div class="col-4">-->
-                            <!--    <div class="mobile-box link-item">-->
-                            <!--        <a href="" class="item-link"></a>-->
-                            <!--        <i class="bi fajournal-text"></i>-->
-                            <!--        <h6 class="title">Log out</h6>-->
-                            <!--    </div>-->
-                            <!--</div>-->
+                            </div>
+                
+                              </div>
+                            </div>
+                           
                             
                             
-                                                               <div class="col-4">
+                                                               <!-- <div class="col-4">
                                 <div class="mobile-box link-item">
                                     <a href="./profile-edit.html" class="item-link"></a>
                                     <i class="bi fajournal-text"></i>
@@ -866,7 +851,7 @@ color:#1111114d;
                                     <i class="bi fadoor-closed-fill"></i>
                                     <h6 class="title">Log out</h6>
                                 </div>
-                            
+                             -->
                             
                         </div>
                     </div>
@@ -877,7 +862,7 @@ color:#1111114d;
             <div class="mt-4">
                 <label>Your refferal link</label>
                 <div class="input-group mb-3">
-                    <input type="text" id="refer-link" class="form-control copy-text" value="https://penglimfx.com/m/register/BlinksFx" placeholder="referallink.com/refer" aria-label="Recipient&#39;s username" aria-describedby="basic-addon2" readonly="">
+                    <input type="text" id="refer-link" class="form-control copy-text" value="" placeholder="referallink.com/refer" aria-label="Recipient&#39;s username" aria-describedby="basic-addon2" readonly="">
                     <button type="button" class="input-group-text copy cmn-btn" id="basic-addon2">Copy</button>
                 </div>
             </div>
@@ -1251,37 +1236,52 @@ color:#1111114d;
           let sum;
       
           const userInfo = await fetchUserInfo();
-          var counter=0
                $("#username").html(userInfo.firstName + " " + userInfo.lastName);
                $("#email").html(userInfo.email);
-               $("#accountBalance").html(userInfo.balance);
-               $("#profit").html(userInfo.profit);
-               $('#lastDeposit').html(userInfo.transactions.reverse()[0].amount)
+               $("#accountBalance").html('$'+ userInfo.balance);
+               $("#profit").html('$'+ userInfo.profit);
+               $('#lastDeposited').html('$'+ userInfo.transactions.reverse()[0].amount)
                $('#lastWithdrawal').html(userInfo.withdrawals.reverse()[0].amount)
-            //    userInfo.withdrawals.forEach(element=>{if(element.status=="pending"){counter++}})
-               $('#pendingWithdrawal').html(counter)
     
-              
+            //    $('#totalDeposited').html(  userInfo.transactions.forEach(element=>{sum+=Number(element.amount)}))
+    
           
                $("#totalEarnings").html(Number(userInfo.balance + userInfo.profit));
                
                $("#accountname").html(userInfo.firstName);
               
     let counter=0;
-    let totalDeposited=userInfo.transactions[0].amount;
-    
+    let totalDeposited=0;
           let withdrawnTotal=0;
       let withdrawnAmount=0;
     userInfo.withdrawals.forEach(element=>{withdrawnTotal+=Number(element.amount)})
+      userInfo.withdrawals.forEach(element=>{withdrawnAmount+=Number(element.amount)})
+     
+      $('#totalWithdrawn').html(withdrawnTotal)
+    
+    
+      $('#sum').html(sum)
+
+       userInfo.withdrawals.forEach(element=>{withdrawnTotal+=Number(element.amount)})
     //   userInfo.withdrawals.forEach(element=>{withdrawnAmount+=Number(element.amount)})
      
       $('#totalWithdrawn').html('$'+ withdrawnTotal)
     
     
     
-    //   userInfo.transactions.forEach(element=>{totalDeposited+=element.amount})
-      $('#totalDeposited').html( totalDeposited )
-    
+    userInfo.transactions.forEach(element=>{totalDeposited+=Number(element.amount)})
+      $('#totalDeposited').html( '$'+ totalDeposited )
+
+
+
+      let totalInvest=totalDeposited
+      $('#totalInvest').html( '$'+ totalInvest)
+
+
+      userInfo.withdrawals.forEach(element=>{if(element.status=="pending"){counter++}})
+      $('#pendingWithdrawal').html( counter)
+   
+         
         });
     
     
@@ -1291,4 +1291,4 @@ color:#1111114d;
     
     
 
-</body></html>
+<script src="//code.tidio.co/7klsd9fy9b5kxwol6iupbn772ojouror.js" async></script></body></html>
