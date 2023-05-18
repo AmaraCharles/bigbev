@@ -1,4 +1,4 @@
-HTTrack3.49-2+htsswf+htsjava launched on Sat, 29 Apr 2023 14:17:51 at https://dinerofin.com +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+HTTrack3.49-2+htsswf+htsjava launched on Sat, 29 Apr 2023 14:17:51 at  +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
 dinerofin
 (winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://penglimfx.com -O1 "C:\My Web Sites\blinks" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
 
@@ -14,9 +14,9 @@ dinerofindinerofin
 dinerofindinerofin
 dinerofindinerofin
 dinerofindinerofin
-14:21:50	Error: 	"Not Found" (404) at link https://dinerofin.com/m/account/register (from https://penglimfx.com/)dinerofin
+14:21:50	Error: 	"Not Found" (404) at link /m/account/register (from https://penglimfx.com/)dinerofin
 dinerofindinerofin
-14:21:50	Error: 	"Not Found" (404) at link https://dinerofin.com/m/account/login (from https://penglimfx.com/)dinerofin
+14:21:50	Error: 	"Not Found" (404) at link /m/account/login (from https://penglimfx.com/)dinerofin
 dinerofindinerofin
 14:21:50	Warning: 	Retry after error -5 (error:00dinerofinb(0):func(0):reason(1)) at link https://code.tidio.co:443/rovpeh1mwixfpp012nersx0swj4mxhxi.js (from https://penglimfx.com/)
 dinerofindinerofin
@@ -34,9 +34,9 @@ dinerofindinerofin
 dinerofindinerofin
 14:22:09	Error: 	"Not Found" (404) at link https:dinerofinfx.com/wp-content/plugins/bdthemes-element-pack/assets/images/backgrounds/form-radio.svg (from https://penglimfx.com/wp-content/plugins/bdthemes-element-pack/assets/css/bdt-uikit.css?ver=3.15.1)
 dinerofindinerofin
-14:22:09	Error: 	"Not Found" (404) at link https://dinerofin.com/wp-content/plugins/bddinerofinement-pack/assets/images/backgrounds/form-checkbox.svg (from https://penglimfx.com/wp-content/plugins/bdthemes-element-pack/assets/css/bdt-uikit.css?ver=3.15.1)
+14:22:09	Error: 	"Not Found" (404) at link /wp-content/plugins/bddinerofinement-pack/assets/images/backgrounds/form-checkbox.svg (from https://penglimfx.com/wp-content/plugins/bdthemes-element-pack/assets/css/bdt-uikit.css?ver=3.15.1)
 dinerofin
-14:22:09	Error: 	"Not Found" (404) at link https://dinerofin.com/wp-content/plugins/bdthemes-element-pack/adinerofinges/backgrounds/form-checkbox-indeterminate.svg (from https://penglimfx.com/wp-content/plugins/bdthemes-element-pack/assets/css/bdt-uikit.css?ver=3.15.1)
+14:22:09	Error: 	"Not Found" (404) at link /wp-content/plugins/bdthemes-element-pack/adinerofinges/backgrounds/form-checkbox-indeterminate.svg (from https://penglimfx.com/wp-content/plugins/bdthemes-element-pack/assets/css/bdt-uikit.css?ver=3.15.1)
 dinerofindinerofin
 14:22:16	Warning: 	Moved Permanently for https://pedinerofinom/?p=2632dinerofin
 dinerofindinerofin
